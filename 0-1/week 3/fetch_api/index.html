@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fetchData()">fetch <datagrid></datagrid></button>
+</body>
+<script>
+    // function fetchData(){
+    //     //alert("its working")
+    //     //fetch returns a promise so we have use the .then syntax or async await
+    //     //response.json also returns a promise converts response to json
+    //     fetch("https://fakerapi.it/api/v1/persons").then(
+    //         (response)=>{response.json().then(
+    //             (data)=>{
+    //         console.log(data)
+    //     })})
+    // }
+    //another way to write the above function
+    async function fetchData(){
+        const response = await fetch("https://fakerapi.it/api/v1/persons")
+        const data = await response.json()
+        console.log(data)
+    }
+</script>
+</html>
